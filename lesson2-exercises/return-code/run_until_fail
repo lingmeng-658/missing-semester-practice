@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+
+count=0
+
+while true; do
+    count=$((count + 1))
+    
+    ./rare_fail.sh > stdout.log 2> stderr.log
+    status=$?
+
+    if [[ $status -ne 0 ]]; then
+        echo "Command failed after $count runs."
+        echo "Exit status: $status"
+
+        echo "===== stdout ====="
+        cat stdout.log
+
+        echo "===== stderr ====="
+        cat stderr.log
+
+        break
+    fi
+done

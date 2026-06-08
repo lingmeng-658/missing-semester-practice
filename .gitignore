@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+*.log
+trace.log
+.DS_Store
+.vscode/
+
+# Generated output files
+nohup.out
+
+# Compiled binaries
+lesson4-debugging/memory/overflow
+lesson4-debugging/memory/overflow_asan
